@@ -1,17 +1,12 @@
+
 <form [formGroup]="taskForm" (submit)="createTask()">
-  <label title="Название">
-    Название:
-    <input formControlName="name">
-  </label>
+    <input class="mdl-textfield__input" type="text" formControlName="name" placeholder="Название">
   <br>
   <app-control-error [control]="taskForm.controls.name"></app-control-error>
-  <label title="Описание">
-    Описание:
-    <input formControlName="description">
-  </label>
+    <input class="mdl-textfield__input" type="text"  formControlName="description" placeholder="Описание">
   <br>
   <app-control-error [control]="taskForm.controls.description"></app-control-error>
-  <select formControlName="executor">
+  <select formControlName="executor" class="styled-select">
     <option *ngFor="let exec of executors" [value]="exec">
       {{exec}}
     </option>

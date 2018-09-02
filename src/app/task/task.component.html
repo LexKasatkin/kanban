@@ -1,8 +1,11 @@
-<p>
+<ul>
+  <a>
   Сделать: {{task.title}},<br>
   описание: {{task.description}}, <br>
   исполнитель: {{task.executor}}, <br>
   приоритет: {{task.priority}}<br>
-</p>
+  постановка задачи: {{task.startTime | date:'yyyy.MM.dd, hh:mm:ss' }}<br>
+    <button *ngIf="moveEnabled" (click)="moveAhead()">Вперед</button>
+  </a>
+</ul>
 
-<button *ngIf="moveEnabled" (click)="moveAhead()">Вперед</button>

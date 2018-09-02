@@ -8,6 +8,7 @@ import {TaskComponent} from './task/task.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TaskFormComponent} from './task-form/task-form.component';
 import { ControlErrorComponent } from './control-error/control-error.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ControlErrorComponent } from './control-error/control-error.component';
     StageComponent,
     TaskComponent,
     TaskFormComponent,
-    ControlErrorComponent
+    ControlErrorComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

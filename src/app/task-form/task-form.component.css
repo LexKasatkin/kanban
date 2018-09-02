@@ -1,0 +1,55 @@
+#formazh input, textarea {
+  /*Borders and background color*/
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border: 1px solid #DADADA;
+  background: #F9F9F9;
+
+  /* Shadows*/
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .15);
+  -moz-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .15);
+
+  /*Font styles*/
+  font-family: «Trebuchet MS», Arial, Helvetica, sans-serif;
+  color: #747474;
+  font-size: 12px;
+  font-style: italic;
+
+  /*Spacings*/
+  margin-top: 5px;
+  height: 18px;
+  line-height: 18px;
+  padding: 5px;
+  width: 200px;
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+  color: white;
+}
+
+button {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  padding: 5px 5px;
+  font-size: 12px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+button:focus {
+  outline: none
+}
+

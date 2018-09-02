@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Task} from '../task';
 
 @Component({
@@ -6,7 +6,7 @@ import {Task} from '../task';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
-export class TaskComponent implements OnInit {
+export class TaskComponent implements OnInit, OnDestroy {
 
   @Input()
   task: Task;
@@ -25,5 +25,8 @@ export class TaskComponent implements OnInit {
 
   moveAhead() {
     this.moveTask.emit(this.task);
+  }
+
+  ngOnDestroy() {
   }
 }
