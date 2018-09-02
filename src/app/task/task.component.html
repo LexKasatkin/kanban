@@ -1,11 +1,13 @@
 <ul>
+  <li>
   <a>
-  Сделать: {{task.title}},<br>
+ Сделать: {{task.title}}<br>
   описание: {{task.description}}, <br>
   исполнитель: {{task.executor}}, <br>
   приоритет: {{task.priority}}<br>
-  постановка задачи: {{task.startTime | date:'yyyy.MM.dd, hh:mm:ss' }}<br>
+  постановка задачи: <app-timer [timerOfTheComponent]="ngOnInit()"></app-timer><br>
     <button *ngIf="moveEnabled" (click)="moveAhead()">Вперед</button>
   </a>
+  </li>
 </ul>
 

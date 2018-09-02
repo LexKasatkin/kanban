@@ -83,5 +83,22 @@ ul li a:hover,ul li a:focus{
   z-index:5;
 }
 
+button {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  padding: 3px 3px;
+  font-size: 12px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+button:focus {
+  outline: none
+}
+
+
+
 
 

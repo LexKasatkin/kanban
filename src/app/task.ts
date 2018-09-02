@@ -1,15 +1,20 @@
+import {Timer} from './timer/timer';
+
 export class Task {
   title: string;
   description: string;
   executor: string;
   priority = 1;
-  startTime: Date;
+  timer: Timer;
 
-  constructor(title: string, description: string, executor: string, priority: number, startTime: Date) {
+  constructor(title: string, description: string, executor: string, priority: number, timer: Timer) {
     this.title = title;
     this.description = description;
     this.priority = priority;
     this.executor = executor;
-    this.startTime = startTime;
+    this.timer = timer;
+  }
+  getTimer() {
+    return this.timer;
   }
 }

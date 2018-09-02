@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Task} from '../task';
+import {Timer} from '../timer/timer';
 
 @Component({
   selector: 'app-task',
@@ -16,11 +17,13 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
+  moveTimer: Timer;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.moveTimer = this.task.timer;
   }
 
   moveAhead() {

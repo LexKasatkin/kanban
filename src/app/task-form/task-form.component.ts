@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Task} from '../task';
+import {Timer} from '../timer/timer';
 
 @Component({
   selector: 'app-task-form',
@@ -34,7 +35,7 @@ export class TaskFormComponent implements OnInit {
         description: string,
         executor: string
       } = this.taskForm.value;
-      const task = new Task(value.name, value.description, value.executor, 1, new Date());
+      const task = new Task(value.name, value.description, value.executor, 1, new Timer(new Date()));
       this.taskForm.reset({
         name: '',
         description: '',

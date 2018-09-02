@@ -1,23 +1,30 @@
 export class Timer {
-  private readonly interestingEvent: Date;
-  timeBeforeTheEvent: Date;
+  private timeBeforeCreateTask: number;
   timerId: number;
+  timeCreateTask: Date;
 
-  constructor(interestingEvent: Date) {
-    this.interestingEvent = interestingEvent;
-    this.timeBeforeTheEvent = new Date();
+  constructor(timeCreateTask: Date) {
+    this.timeCreateTask = timeCreateTask;
   }
 
 
-  getInterestingEvent(): Date {
-    return this.interestingEvent;
+  getTimeCreateTask(): Date {
+    return this.timeCreateTask;
   }
 
-  getTimeBeforeTheEvent(): Date {
-    return this.timeBeforeTheEvent;
+  getTimeBeforeCreateTask(): number {
+    return this.timeBeforeCreateTask;
+  }
+
+  setTimeBeforeCreateTask(value: number) {
+    this.timeBeforeCreateTask = value;
   }
 
   getTimerId(): number {
     return this.timerId;
+  }
+
+  setTimerId(value: number) {
+    this.timerId = value;
   }
 }

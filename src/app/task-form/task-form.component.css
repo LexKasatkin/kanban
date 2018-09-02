@@ -13,16 +13,21 @@
   /*Font styles*/
   font-family: «Trebuchet MS», Arial, Helvetica, sans-serif;
   color: #747474;
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 
   /*Spacings*/
-  margin-top: 5px;
+  /*margin-top: 5px;*/
   height: 18px;
   line-height: 18px;
   padding: 5px;
   width: 200px;
   outline: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 select {
@@ -33,9 +38,9 @@ select {
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #2c3e50;
+  background: #ffffff;
   background-image: none;
-  color: white;
+  color: #0a0a0a;
 }
 
 button {

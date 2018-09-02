@@ -1,9 +1,9 @@
 
 <form [formGroup]="taskForm" (submit)="createTask()">
-    <input class="mdl-textfield__input" type="text" formControlName="name" placeholder="Название">
+    <input type="text" formControlName="name" placeholder="Название">
   <br>
   <app-control-error [control]="taskForm.controls.name"></app-control-error>
-    <input class="mdl-textfield__input" type="text"  formControlName="description" placeholder="Описание">
+    <input type="text"  formControlName="description" placeholder="Описание">
   <br>
   <app-control-error [control]="taskForm.controls.description"></app-control-error>
   <select formControlName="executor" class="styled-select">
