@@ -1,5 +1,5 @@
 export class Timer {
-  private timeBeforeCreateTask: number;
+  timeAfterCreateTask: Date;
   timerId: number;
   timeCreateTask: Date;
 
@@ -12,12 +12,12 @@ export class Timer {
     return this.timeCreateTask;
   }
 
-  getTimeBeforeCreateTask(): number {
-    return this.timeBeforeCreateTask;
+  getTimeAfterCreateTask(): Date {
+    return this.timeAfterCreateTask;
   }
 
-  setTimeBeforeCreateTask(value: number) {
-    this.timeBeforeCreateTask = value;
+  setTimeAfterCreateTask(value: Date) {
+    this.timeAfterCreateTask = value;
   }
 
   getTimerId(): number {

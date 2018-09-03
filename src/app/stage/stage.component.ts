@@ -15,6 +15,9 @@ export class StageComponent implements OnInit {
   @Input()
   moveEnabled: boolean;
 
+  @Input()
+  moveBackEnabled: boolean;
+
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
 

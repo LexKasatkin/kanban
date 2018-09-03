@@ -6,6 +6,7 @@ export class Task {
   executor: string;
   priority = 1;
   timer: Timer;
+  private moving: boolean;
 
   constructor(title: string, description: string, executor: string, priority: number, timer: Timer) {
     this.title = title;
@@ -14,7 +15,16 @@ export class Task {
     this.executor = executor;
     this.timer = timer;
   }
+
   getTimer() {
     return this.timer;
+  }
+
+  setMoving(moving: boolean) {
+    this.moving = moving;
+  }
+
+  getMoving() {
+    return this.moving;
   }
 }

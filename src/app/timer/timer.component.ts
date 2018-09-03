@@ -1,5 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Timer} from './timer';
+import {Task} from '../task';
 
 @Component({
   selector: 'app-timer',
@@ -8,25 +9,27 @@ import {Timer} from './timer';
 })
 export class TimerComponent implements OnInit, OnDestroy {
   @Input()
-  timerOfTheComponent: Timer;
+  task: Task;
 
   constructor() {
   }
 
   ngOnInit() {
-    console.log(this.timerOfTheComponent);
-    this.timerOfTheComponent.timerId = (setInterval(() => this.setDeltaTime(), 1000));
+    console.log('MY TIMER');
+    console.log(this.task.timer);
+    this.task.timer.timerId = (setInterval(() => this.setDeltaTime(), 1000));
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.timerOfTheComponent.getTimerId());
+    clearInterval(this.task.getTimer().getTimerId());
   }
 
   setDeltaTime() {
-    this.timerOfTheComponent.setTimeBeforeCreateTask(new Date().getTime() - this.timerOfTheComponent.timeCreateTask.getTime());
+    this.task.timer.setTimeAfterCreateTask(
+      new Date(new Date().getTime() - this.task.getTimer().timeCreateTask.getTime()));
   }
 
   getTimer() {
-    return this.timerOfTheComponent;
+    return this.task.getTimer();
   }
 }

@@ -14,19 +14,19 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   @Input()
   moveEnabled: boolean;
-
+  @Input()
+  moveBackEnabled: boolean;
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
-  moveTimer: Timer;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.moveTimer = this.task.timer;
   }
 
-  moveAhead() {
+  moveAhead(moving: boolean) {
+    this.task.setMoving(moving);
     this.moveTask.emit(this.task);
   }
 
