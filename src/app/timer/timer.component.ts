@@ -11,25 +11,22 @@ export class TimerComponent implements OnInit, OnDestroy {
   @Input()
   task: Task;
 
+  timer: Timer;
+
   constructor() {
+    this.timer = new Timer();
   }
 
   ngOnInit() {
-    console.log('MY TIMER');
-    console.log(this.task.timer);
-    this.task.timer.timerId = (setInterval(() => this.setDeltaTime(), 1000));
+    this.timer.timerId = (setInterval(() => this.setDeltaTime(), 1000));
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.task.getTimer().getTimerId());
+    clearInterval(this.timer.getTimerId());
   }
 
   setDeltaTime() {
-    this.task.timer.setTimeAfterCreateTask(
-      new Date(new Date().getTime() - this.task.getTimer().timeCreateTask.getTime()));
-  }
-
-  getTimer() {
-    return this.task.getTimer();
+    this.timer.setTimeAfterCreateTask(
+      new Date(new Date().getTime() - this.task.getTimeCreateTask().getTime()));
   }
 }

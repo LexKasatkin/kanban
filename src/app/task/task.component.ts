@@ -18,6 +18,8 @@ export class TaskComponent implements OnInit, OnDestroy {
   moveBackEnabled: boolean;
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
+  @Output()
+  moveBooleanTask: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {
   }
@@ -26,7 +28,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   }
 
   moveAhead(moving: boolean) {
-    this.task.setMoving(moving);
+    this.moveBooleanTask.emit(moving);
     this.moveTask.emit(this.task);
   }
 

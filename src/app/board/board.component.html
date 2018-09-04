@@ -1,4 +1,4 @@
 <div *ngFor="let stage of stages; let i=index; let isLast=last;">
   <app-stage [moveEnabled]="!isLast" [moveBackEnabled]="!(i==0)" (moveTask)="onMoveTask($event, i)"
-             [stage]="stage"></app-stage>
+             [stage]="stage" (moveBooleanTask)="onMoveBoolTask($event)"></app-stage>
 </div>

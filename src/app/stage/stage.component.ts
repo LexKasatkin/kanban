@@ -21,6 +21,9 @@ export class StageComponent implements OnInit {
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
 
+  @Output()
+  moveBooleanTask: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() {
 
   }
@@ -35,5 +38,9 @@ export class StageComponent implements OnInit {
   onTaskMoved($event: Task) {
     this.stage.tasks = this.stage.tasks.filter(value => value !== $event);
     this.moveTask.emit($event);
+  }
+
+  onBoolTaskMoved($event: boolean) {
+    this.moveBooleanTask.emit($event);
   }
 }

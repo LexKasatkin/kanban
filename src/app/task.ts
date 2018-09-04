@@ -5,19 +5,15 @@ export class Task {
   description: string;
   executor: string;
   priority = 1;
-  timer: Timer;
+  timeCreateTask: Date;
   private moving: boolean;
 
-  constructor(title: string, description: string, executor: string, priority: number, timer: Timer) {
+  constructor(title: string, description: string, executor: string, priority: number, timeCreateTask: Date) {
     this.title = title;
     this.description = description;
     this.priority = priority;
     this.executor = executor;
-    this.timer = timer;
-  }
-
-  getTimer() {
-    return this.timer;
+    this.timeCreateTask = timeCreateTask;
   }
 
   setMoving(moving: boolean) {
@@ -27,4 +23,10 @@ export class Task {
   getMoving() {
     return this.moving;
   }
+
+  getTimeCreateTask(): Date {
+    return this.timeCreateTask;
+  }
+
+
 }

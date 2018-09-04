@@ -35,7 +35,7 @@ export class TaskFormComponent implements OnInit {
         description: string,
         executor: string
       } = this.taskForm.value;
-      const task = new Task(value.name, value.description, value.executor, 1, new Timer(new Date()));
+      const task = new Task(value.name, value.description, value.executor, 1, new Date());
       this.taskForm.reset({
         name: '',
         description: '',
