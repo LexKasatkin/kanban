@@ -13,7 +13,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   task: Task;
 
   @Input()
-  moveEnabled: boolean;
+  moveForwardEnabled: boolean;
   @Input()
   moveBackEnabled: boolean;
   @Output()

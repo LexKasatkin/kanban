@@ -13,7 +13,7 @@ export class StageComponent implements OnInit {
   stage: Stage;
 
   @Input()
-  moveEnabled: boolean;
+  moveForwardEnabled: boolean;
 
   @Input()
   moveBackEnabled: boolean;
