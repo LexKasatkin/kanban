@@ -10,7 +10,6 @@ import {Task} from '../task';
 export class BoardComponent implements OnInit {
 
   stages: Stage[] = Stages;
-  moving: boolean;
 
   constructor() {
   }
@@ -18,16 +17,11 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMoveTask($event: Task, i: number) {
-    console.log(this.moving);
-    if (this.moving) {
-      this.stages[i + 1].tasks.push($event);
-    } else {
-      this.stages[i - 1].tasks.push($event);
-    }
+  onMoveBackward($event: Task, i: number) {
+    this.stages[i - 1].tasks.push($event);
   }
 
-  onMoveBoolTask($event) {
-    this.moving = $event;
+  onMoveForward($event: Task, i: number) {
+    this.stages[i + 1].tasks.push($event);
   }
 }

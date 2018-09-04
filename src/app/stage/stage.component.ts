@@ -19,10 +19,10 @@ export class StageComponent implements OnInit {
   moveBackEnabled: boolean;
 
   @Output()
-  moveTask: EventEmitter<Task> = new EventEmitter<Task>();
+  moveForward: EventEmitter<Task> = new EventEmitter<Task>();
 
   @Output()
-  moveBooleanTask: EventEmitter<boolean> = new EventEmitter<boolean>();
+  moveBackward: EventEmitter<Task> = new EventEmitter<Task>();
 
   constructor() {
 
@@ -35,12 +35,17 @@ export class StageComponent implements OnInit {
     this.stage.tasks.push(task);
   }
 
-  onTaskMoved($event: Task) {
-    this.stage.tasks = this.stage.tasks.filter(value => value !== $event);
-    this.moveTask.emit($event);
+  onForward($event: Task) {
+    this.filterTask($event)
+    this.moveForward.emit($event);
   }
 
-  onBoolTaskMoved($event: boolean) {
-    this.moveBooleanTask.emit($event);
+  onBackward($event: Task) {
+    this.filterTask($event)
+    this.moveBackward.emit($event);
+  }
+
+  filterTask($event) {
+    this.stage.tasks = this.stage.tasks.filter(value => value !== $event);
   }
 }
