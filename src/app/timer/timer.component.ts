@@ -1,6 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Timer} from './timer';
-import {Task} from '../task';
+import {Task} from '../models/task';
 
 @Component({
   selector: 'app-timer',
