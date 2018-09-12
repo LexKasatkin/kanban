@@ -13,11 +13,13 @@ export class TaskComponent implements OnInit, OnDestroy {
   task: Task;
 
   @Input()
-  moveEnabled: boolean;
+  moveForwardEnabled: boolean;
   @Input()
   moveBackEnabled: boolean;
   @Output()
-  moveTask: EventEmitter<Task> = new EventEmitter<Task>();
+  moveTaskForward: EventEmitter<Task> = new EventEmitter<Task>();
+  @Output()
+  moveTaskBackward: EventEmitter<Task> = new EventEmitter<Task>();
 
   constructor() {
   }
@@ -25,9 +27,12 @@ export class TaskComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  moveAhead(moving: boolean) {
-    this.task.setMoving(moving);
-    this.moveTask.emit(this.task);
+  moveAhead() {
+    this.moveTaskForward.emit(this.task);
+  }
+
+  moveAtail() {
+    this.moveTaskBackward.emit(this.task);
   }
 
   ngOnDestroy() {

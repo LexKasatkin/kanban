@@ -1,16 +1,10 @@
 export class Timer {
   timeAfterCreateTask: Date;
   timerId: number;
-  timeCreateTask: Date;
 
-  constructor(timeCreateTask: Date) {
-    this.timeCreateTask = timeCreateTask;
+  constructor() {
   }
 
-
-  getTimeCreateTask(): Date {
-    return this.timeCreateTask;
-  }
 
   getTimeAfterCreateTask(): Date {
     return this.timeAfterCreateTask;

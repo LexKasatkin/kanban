@@ -1,9 +1,9 @@
 <ul>
   <li><div>
-    <button class="floated" *ngIf="moveBackEnabled" (click)="moveAhead(false)">
+    <button class="floated" *ngIf="moveBackEnabled" (click)="moveAtail()">
       <img src="assets/back.png" width="35">
     </button>
-    <button class="floated" *ngIf="moveEnabled" (click)="moveAhead(true)">
+    <button class="floated" *ngIf="moveForwardEnabled" (click)="moveAhead()">
       <img src="assets/forward.png" width="35">
     </button>
   </div>

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Stage, Stages} from '../stage';
-import {Task} from '../task';
+import {Stage, Stages} from '../models/stage';
+import {Task} from '../models/task';
 
 @Component({
   selector: 'app-board',
@@ -17,11 +17,11 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMoveTask($event: Task, i: number) {
-    if ($event.getMoving()) {
-      this.stages[i + 1].tasks.push($event);
-    } else {
-      this.stages[i - 1].tasks.push($event);
-    }
+  onMoveBackward($event: Task, i: number) {
+    this.stages[i - 1].tasks.push($event);
+  }
+
+  onMoveForward($event: Task, i: number) {
+    this.stages[i + 1].tasks.push($event);
   }
 }
